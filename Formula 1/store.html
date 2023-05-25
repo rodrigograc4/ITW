@@ -1,0 +1,818 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>STORE</title>
+    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="store.css" rel="stylesheet" />
+    <link href="F1 Formula 1.png" rel="icon" />
+    <style>
+        .modal {
+            display: none;
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            -webkit-animation-name: fadeIn; /* Fade in the background */
+            -webkit-animation-duration: 0.4s;
+            animation-name: fadeIn;
+            animation-duration: 0.4s
+        }
+
+        .modal-content {
+            position: fixed;
+            top: 15%;
+            left: 25%;
+            bottom: 10%;
+            right: 25%;
+            background-color: #fefefe;
+            height: 70%;
+            width: 50%;
+            -webkit-animation-name: slideIn;
+            -webkit-animation-duration: 0.4s;
+            animation-name: slideIn;
+            animation-duration: 0.4s
+        }
+
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #730000;
+            color: white;
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        @-webkit-keyframes slideIn {
+            from {
+                bottom: -300px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                bottom: -300px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="width:100%">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="formula-1-logo-7.png" width="70"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div style="flex-grow: 1;"></div>
+                <ul class="navbar-nav mr-auto me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link  active" aria-current="page" href="index.html"> HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="drivers.html">DRIVERS</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="constructors.html">CONSTRUCTORS</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="races.html">RACES</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="teams.html">GP 2022</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page " href="news.html"> NEWS</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="aboutus.html"> ABOUT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin-bottom: 100px; margin-top: 30px">
+        <div class="row form-group" style="margin-bottom: 30px">
+            <div class="col-md-1 offset-6 text-right"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></div>
+            <div class="col-md-1 text-right"><span class="form-control" id="quantidades" title="Quantidade total de produtos">0</span></div>
+            <div class="col-md-2 text-right"><span class="form-control" id="total" title="Preço total da compra">0.00</span></div>
+            <div class="col-md-2 text-right">
+                <button type="button" class="btn btn-danger" id="myBtn" title="Enviar pedido"><i class="fa fa-send"></i></button>
+                <button type="button" class="btn btn-secondary" onclick="limpar()" title="Limpar compra"><i class="fa fa-trash-o"></i></button>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Comprar</h2>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="usrname"> Nome</label>
+                            <input type="text" class="form-control" id="usrname" placeholder="Nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="email"> Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="mr"> Morada</label>
+                            <input type="text" class="form-control" id="mr" placeholder="Morada">
+                        </div>
+                        <div class="form-group">
+                            <label for="tr"> Nr Telemovel</label>
+                            <input type="number" class="form-control" id="tr" placeholder="Nr telemovel">
+                        </div>
+                        <div class="radio">
+                            <label>Pagamento:</label>
+                            <input type="radio" id="mb" name="Multibanco" value="Multibanco"
+                                   checked>
+                            <label for="Multibanco">Multibanco</label>
+                            <input type="radio" id="PayPal" name="PayPal" value="PayPal" />
+                            <label for="PayPal">PayPal</label>
+                            <input type="radio" id="MbWay" name="MbWay" value="MbWay" />
+                            <label for="MbWay">MbWay</label>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-success btn-block pull-right">Confirmar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/coleteferrari.jpg" alt="ferrari">
+                    <div class="card-body">
+                        <h4 class="card-title">Colete Scuderia Ferrari Puma</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: VA33TXRJ5</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success">
+                                <h5 class="mt-4">100,00<i class="fa fa-eur"></i></h5>
+                            </div>
+                            <input type="hidden" name="precoproduto1" id="precoproduto1" value="100.00" />
+                            <input type="hidden" name="produto1" id="produto1" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(1)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/teamtshirtferrari.jpg" alt="ferrari">
+                    <div class="card-body">
+                        <h4 class="card-title">Scuderia Ferrari 20/21 Team T-Shirt</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: BHO0L1RK9</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">60,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto2" id="precoproduto2" value="60.00" />
+                            <input type="hidden" name="produto2" id="produto2" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(2)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/casacoferrari.jpg" alt="ferrari">
+                    <div class="card-body">
+                        <h4 class="card-title">Casaco Scuderia Ferrari Puma </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: KJ587LKJ1</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">90,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto3" id="precoproduto3" value="90.00" />
+                            <input type="hidden" name="produto3" id="produto3" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(3)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/posterferrari.jpg" alt="ferrari">
+                    <div class="card-body">
+                        <h4 class="card-title">Michael Schumacher  Limited Edition Poster</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: AH764CET1</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">50,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto4" id="precoproduto4" value="50.00" />
+                            <input type="hidden" name="produto4" id="produto4" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(4)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/polomercedes.jpg" alt="mercedes">
+                    <div class="card-body">
+                        <h4 class="card-title">Polo Mercedes AMG Petronas Essentials</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: NX1JUY8ZQ</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">55,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto5" id="precoproduto5" value="55.00" />
+                            <input type="hidden" name="produto5" id="produto5" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(5)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/mercedescasaco.jpg" alt="mercedes">
+                    <div class="card-body">
+                        <h4 class="card-title">Casaco Mercedes AMG Petronas</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: BAO0C8RF2</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">90,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto6" id="precoproduto6" value="90.00" />
+                            <input type="hidden" name="produto6" id="produto6" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(6)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/teamtshirtmercedes.jpg" alt="ferrari">
+                    <div class="card-body">
+                        <h4 class="card-title">T-sirt Team Mercedes AMG Petronas </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: TRE43BHG2</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">40,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto7" id="precoproduto7" value="40.00" />
+                            <input type="hidden" name="produto7" id="produto7" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(7)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/modelocapacetehamilton.jpg" alt="mercedes">
+                    <div class="card-body">
+                        <h4 class="card-title">Mercedes Lewis Hamilton Helmet</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: ZD4657SXY</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">45,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto8" id="precoproduto8" value="45.00" />
+                            <input type="hidden" name="produto8" id="produto8" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(8)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="https://images.footballfanatics.com/red-bull/t-shirt-red-bull-racing-2021-max-verstappen-champion-du-monde_ss4_p-13304892+u-4a3mpuptlgx9xk00zpi+v-b08d4702414c4e98b4d858ae02584f23.jpg?_hv=1&w=900" alt="rbr">
+                    <div class="card-body">
+                        <h4 class="card-title">Red Bull Racing 2021 Max Verstappen World Champion</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: KQ213LP23</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">50,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto9" id="precoproduto9" value="50.00" />
+                            <input type="hidden" name="produto9" id="produto9" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(9)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/hoddiemax.jpg" alt="rbr">
+                    <div class="card-body">
+                        <h4 class="card-title">Hoodie Red Bull Racing Max Verstappen</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: BGF2IJ6NA</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">70,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto10" id="precoproduto10" value="70.00" />
+                            <input type="hidden" name="produto10" id="produto10" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(10)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/casacordbr.jpg" alt="rbr">
+                    <div class="card-body">
+                        <h4 class="card-title">Casaco Red Bull Racing Team </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: TRE43BHG2</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">40,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto11" id="precoproduto11" value="40.00" />
+                            <input type="hidden" name="produto11" id="produto11" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(11)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/canecarbr.jpg" alt="~rbr">
+                    <div class="card-body">
+                        <h4 class="card-title">Caneca Red Bull Racing </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: IJD321RT7</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">25,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto12" id="precoproduto12" value="25.00" />
+                            <input type="hidden" name="produto12" id="produto12" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(12)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/polomclaren.jpg" alt="mc">
+                    <div class="card-body">
+                        <h4 class="card-title">Hodie McLaren</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: FR56BHSK1</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">80,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto13" id="precoproduto13" value="80.00" />
+                            <input type="hidden" name="produto13" id="produto13" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(13)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/coletemclaren.jpg" alt="mc">
+                    <div class="card-body">
+                        <h4 class="card-title">Colete McLaren</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: LKF72CS21</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">100,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto14" id="precoproduto14" value="100.00" />
+                            <input type="hidden" name="produto14" id="produto14" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(14)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/polomclarenn.jpg" alt="mc">
+                    <div class="card-body">
+                        <h4 class="card-title">Polo McLaren </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: PRE4K87G2</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">70,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto15" id="precoproduto15" value="70.00" />
+                            <input type="hidden" name="produto15" id="produto15" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(15)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/williamscap.jpg" alt="ws">
+                    <div class="card-body">
+                        <h4 class="card-title">Chapéu Williams Racing </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: WR561V4FT</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">38,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto16" id="precoproduto16" value="38.00" />
+                            <input type="hidden" name="produto16" id="produto16" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(16)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/williams casaco.jpg" alt="ws">
+                    <div class="card-body">
+                        <h4 class="card-title">Casaco Williams Racing Team</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: LHS324L91</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">200,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto17" id="precoproduto17" value="200.00" />
+                            <input type="hidden" name="produto17" id="produto17" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(17)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/casacoaston.jpg" alt="aston">
+                    <div class="card-body">
+                        <h4 class="card-title">Casaco Aston Martin </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: VZ23KJS9L</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">175,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto18" id="precoproduto18" value="175.00" />
+                            <input type="hidden" name="produto18" id="produto18" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(18)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/colete aston.jpg" alt="aston">
+                    <div class="card-body">
+                        <h4 class="card-title">Colete Aston Martin</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: JD2F45NA1</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">113,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto19" id="precoproduto19" value="113.00" />
+                            <input type="hidden" name="produto19" id="produto19" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(19)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/polohaas.jpg" alt="haas">
+                    <div class="card-body">
+                        <h4 class="card-title">Polo Haas Team</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: PLS35F2FC</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">70,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto20" id="precoproduto20" value="70.00" />
+                            <input type="hidden" name="produto20" id="produto20" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(20)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/capaha.jpg" alt="alpha">
+                    <div class="card-body">
+                        <h4 class="card-title">Chapeu AlphaTauri </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: JG521VRZX</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">40,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto21" id="precoproduto21" value="40.00" />
+                            <input type="hidden" name="produto21" id="produto21" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(21)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/hoodiealpha.jpg" alt="alpha">
+                    <div class="card-body">
+                        <h4 class="card-title">Hoddie Alpha Tauri</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: ZS26N7N21</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">80,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto22" id="precoproduto22" value="80.00" />
+                            <input type="hidden" name="produto22" id="produto22" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(22)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/alfaroemu.jpg" alt="alfa">
+                    <div class="card-body">
+                        <h4 class="card-title">Casaco Alfa Romeu</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: XW56GVEL1</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">XXL</option>
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">170,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto23" id="precoproduto23" value="170.00" />
+                            <input type="hidden" name="produto23" id="produto23" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(23)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3 h-100">
+                <div class="card">
+                    <img class="card-img" src="store/chapeualphine.jpg" alt="alpine">
+                    <div class="card-body">
+                        <h4 class="card-title">Chapeu Alpine Team </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Style: LJS37Z6M1</h6>
+                        <div class="options d-flex flex-fill">
+                            <select class="custom-select ml-1">
+                                <option selected>Size</option>
+
+                            </select>
+                        </div>
+                        <div class="buy d-flex justify-content-between align-items-center">
+                            <div class="price text-success"><h5 class="mt-4">40,00<i class="fa fa-eur"></i></h5></div>
+                            <input type="hidden" name="precoproduto24" id="precoproduto24" value="40.00" />
+                            <input type="hidden" name="produto24" id="produto24" value="0" />
+                            <button type="button" class="btn btn-danger mt-3" onclick="comprar(24)"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-black navbar-dark fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text"><img src="formula-1-logo-7.png" width="45"> Formula One World Championship Limited</div>
+            <div class="navbar-text text-center"><a class="nav-link active" aria-current="page" href="store.html"> Official Store</a></div>
+            <div class="navbar-text text-end">
+                <a class="navbar-brand" href="https://www.instagram.com/f1/?hl=pt"><img src="Glossy-Instagram-icon-PNG.png" width="30" height="30"></a>
+                <a class="navbar-brand" href="https://www.facebook.com/Formula1/"><img src="facebook-icon.png" width="30" height="30"></a>
+                <a class="navbar-brand" href=" https://www.youtube.com/user/Formula1?app=desktop"><img src="kisspng-united-states-youtube-logo-youtube-play-button-transparent-png-5ab1be08946c16.888989591521597960608.png" width="30" height="30"></a>
+            </div>
+        </div>
+    </nav>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+    <script src="java.js"></script>
+</body>
+</html>

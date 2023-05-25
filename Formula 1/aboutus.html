@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ABOUT US</title>
+    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="lixo.css" rel="stylesheet" />
+    <link href="aboutus.css" rel="stylesheet" />
+    <link href="F1 Formula 1.png" rel="icon" />
+    <style>
+        .content {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .collapsible:after {
+            content: '\02795';
+            font-size: 13px;
+            color: white;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active1:after {
+            content: "\2796";
+        }
+
+        .button-55 {
+            align-self: center;
+            background-color: #fff;
+            background-image: none;
+            background-position: 0 90%;
+            background-repeat: repeat no-repeat;
+            background-size: 4px 3px;
+            border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+            border-style: solid;
+            border-width: 2px;
+            box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+            box-sizing: border-box;
+            color: #41403e;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Neucha, sans-serif;
+            font-size: 1rem;
+            line-height: 23px;
+            outline: none;
+            padding: .75rem;
+            text-decoration: none;
+            transition: all 235ms ease-in-out;
+            border-bottom-left-radius: 15px 255px;
+            border-bottom-right-radius: 225px 15px;
+            border-top-left-radius: 255px 15px;
+            border-top-right-radius: 15px 225px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+            .button-55:hover {
+                box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+                transform: translate3d(0, 2px, 0);
+            }
+
+            .button-55:focus {
+                box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+            }
+    </style>
+</head>
+<body style="background-image:url('backaboutus.jpg'); height:1000px">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="width:100%">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="formula-1-logo-7.png" width="70"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div style="flex-grow: 1;"></div>
+                <ul class="navbar-nav mr-auto me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html"> HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="drivers.html">DRIVERS</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="constructors.html">CONSTRUCTORS</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="races.html">RACES</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="teams.html">GP 2022</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page " href="news.html"> NEWS</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="aboutus.html"> ABOUT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!---------Texto------------>
+    <div>
+        <div class="margem" style="border-bottom: 5px; border-bottom-style: groove; border-color: white; color: white; padding-top:100px">
+            <h3>Sobre Nós</h3>
+        </div>
+        <div class="margem" style="color: white; padding-top:30px">
+            <p>
+                Criada em 2021, a F1everything possui um vasto conteúdo, onde estão incluidas fotos e noticias sobre a Fórmula 1, sobre os campeões da mesma e as suas times, assim como as pistas onde competem.
+                A criação deste website deve-se ao sentimento de partilhar o gosto que nós criadores temos pela F1, para que todo o mundo veja o quão espetacular este desporto é.
+                Desde o seu lançamento, a F1everything já possui varios visitantes que ajudaram a melhorar o website e tem assim apresentado um crescimento, do ponto de vista editorial e de audiência.
+            </p>
+            <p>
+                Estamos também presentes nas redes sociais, que nos ajudam a alcançar mais publico e demonstrar um pouco do que temos no website. (Pode verificar o @ do nosso instagram mais abaixo)
+            </p>
+            <p>
+                Segundo alguns institutos de renome, a F1everything é agora o website de F1 com maior crescimento em Portugal, e tendo como previsão para o fim de 2023 se tornar o mais popular do pais.
+                A sede da F1everything está localizada na cidade de Aveiro, em Portugal, não muito longe da Universidade de Aveiro onde nós criadores completamos os nossos estudos.
+            </p>
+            <p>
+                Pode-nos contactar através do nosso instagram:   @f1everything
+            </p>
+            <p>
+
+                Assim como por correio eletrónico:   f1everything@gmail.com
+            </p>
+        </div>
+        <div class="margem" style="justify-content:center; display:flex">
+            <button onclick="document.getElementById('id01').style.display='block'" style="width: auto; background-color: #303030;">Enviar Email</button>
+
+            <div id="id01" class="modal">
+
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <img style="width:220px" src="emailsend.jpg" alt="Avatar" class="avatar">
+                    </div>
+
+                    <div class="container">
+                        <label for="Nome"><b>Nome</b></label>
+                        <input type="text" placeholder="Inserir Nome" id="Nome" name="Nome" class="form-control">
+                        <div class="d-none text-danger col-form-label" id="NomeError">
+                            <i class="fa fa-exclamation-triangle"> Este campo é de preenchimento obrigatório (Min: 3 letras).</i>
+                        </div>
+                        <label for="Email"><b>Endereço de Email</b></label>
+                        <input type="text" placeholder="Inserir email" id="Email" name="Email" class="form-control">
+                        <div class="d-none text-danger col-form-label" id="EmailError">
+                            <i class="fa fa-exclamation-triangle"> Este campo é de preenchimento obrigatório (Min: 3 letras).</i>
+                        </div>
+                        <label for="Assunto"><b>Assunto</b></label>
+                        <input type="text" placeholder="Inserir Assunto" id="Assunto" name="Assunto" class="form-control">
+                        <div class="d-none text-danger col-form-label" id="AssuntoError">
+                            <i class="fa fa-exclamation-triangle"> Este campo é de preenchimento obrigatório (Min: 3 letras).</i>
+                        </div>
+                        <label for="Mensagem"><b>Mensagem</b></label>
+                        <input type="text" placeholder="Escrever a Mensagem" id="Mensagem" name="Mensagem" class="form-control">
+                        <div class="d-none text-danger col-form-label" id="MensagemError">
+                            <i class="fa fa-exclamation-triangle"> Este campo é de preenchimento obrigatório (Min: 3 letras).</i>
+                        </div>
+                        <a href="msgenviada.html"><button type="button" name="submitBtn" onclick="return validacao()" style="background-color:#000000">Enviar</button></a>
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!---------Navbar------------>
+    <nav class="navbar navbar-expand-lg bg-black navbar-dark fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text"><img src="formula-1-logo-7.png" width="45"> Formula One World Championship Limited</div>
+            <div class="navbar-text text-center"><a class="nav-link active" aria-current="page" href="store.html"> Official Store</a></div>
+            <div class="navbar-text text-end">
+                <a class="navbar-brand" href="https://www.instagram.com/f1/?hl=pt"><img src="Glossy-Instagram-icon-PNG.png" width="30" height="30"></a>
+                <a class="navbar-brand" href="https://www.facebook.com/Formula1/"><img src="facebook-icon.png" width="30" height="30"></a>
+                <a class="navbar-brand" href=" https://www.youtube.com/user/Formula1?app=desktop"><img src="kisspng-united-states-youtube-logo-youtube-play-button-transparent-png-5ab1be08946c16.888989591521597960608.png" width="30" height="30"></a>
+            </div>
+        </div>
+    </nav>
+    <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+
+    <script src="validacao.js"></script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

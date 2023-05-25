@@ -1,0 +1,25 @@
+﻿body {
+    vertical-align: middle;
+    display: flex;
+    font-family: 'Calibri', sans-serif !important;
+    background-color: #eee
+}
+
+body {
+    padding: 2rem 0rem;
+}
+
+.like {
+    font-size: 1.5rem;
+}
+.card {
+   
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+}
+    .card:hover {
+        box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+
+

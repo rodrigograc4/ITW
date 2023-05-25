@@ -1,0 +1,449 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HOME</title>
+    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="lixo.css" rel="stylesheet" />
+    <link href="F1 Formula 1.png" rel="icon" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
+    <style>
+        .carousel {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .carousel-item {
+            z-index: -100;
+            height: 600px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+            .carousel-item:nth-child(1) {
+                background-image: url('carrossel/vertappen.jpeg');
+            }
+
+            .carousel-item:nth-child(2) {
+                background-image: url('carrossel/Captura de ecrã 2022-01-13 010705.png');
+            }
+
+            .carousel-item:nth-child(3) {
+                background-image: url('carrossel/miami-track-rendering-1.jpg');
+            }
+
+        .content {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .collapsible:after {
+            content: '\02795';
+            font-size: 13px;
+            color: white;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active1:after {
+            content: "\2796";
+        }
+
+        .button-55 {
+            align-self: center;
+            background-color: #fff;
+            background-image: none;
+            background-position: 0 90%;
+            background-repeat: repeat no-repeat;
+            background-size: 4px 3px;
+            border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+            border-style: solid;
+            border-width: 2px;
+            box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+            box-sizing: border-box;
+            color: #41403e;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Neucha, sans-serif;
+            font-size: 1rem;
+            line-height: 23px;
+            outline: none;
+            padding: .75rem;
+            text-decoration: none;
+            transition: all 235ms ease-in-out;
+            border-bottom-left-radius: 15px 255px;
+            border-bottom-right-radius: 225px 15px;
+            border-top-left-radius: 255px 15px;
+            border-top-right-radius: 15px 225px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+            .button-55:hover {
+                box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+                transform: translate3d(0, 2px, 0);
+            }
+
+            .button-55:focus {
+                box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="width:100%">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="formula-1-logo-7.png" width="70"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div style="flex-grow: 1;"></div>
+                <ul class="navbar-nav mr-auto me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link  active" aria-current="page" href="index.html"> HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="drivers.html">DRIVERS</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="constructors.html">CONSTRUCTORS</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="races.html">RACES</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="teams.html">GP 2022</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page " href="news.html"> NEWS</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="aboutus.html"> ABOUT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="carouselExample" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Campeão do mundo 2021:</h5>
+                    <p>Max Verstappen</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Streamer Oficial em 2022:</h5>
+                    <p>SportTV volta a ser Streamer ate 2024</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Calendario 2022:</h5>
+                    <p>Temporada mais longa do que 2021 com 23 etapas</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="wrapper-grey padded margem" style="border-bottom: 5px; border-bottom-style: groove; border-color: red; width: 86%; margin-left: 7%; margin-right: 7%;">
+        <h2 class="text-center">História</h2>
+    </div>
+    <div class="margem" style="border-bottom: 5px; border-bottom-style: groove; border-color: red; width: 86%; margin-left: 7%; margin-right: 7%;">
+        <p>
+            Oficialmente, a Fórmula 1 foi criada em 1950 pela Federação Internacional de Automobilismo (FIA). No entanto, a história da categoria remonta ao final do século XIX, quando as primeiras corridas de carros foram disputadas na Europa. Como na época não existiam circuitos, as corridas aconteciam em estradas. Alguns historiadores apontam que uma corrida entre Paris e Bordeaux, na França, em 1895, tenha sido o marco inicial da F1. Essa corrida durou 48 horas e teve um percurso de 1200 quilômetros.
+            Há quem considere o ano de 1901 como o início da Fórmula 1, pois nesse ano foi disputada a primeira corrida com o nome de Grande Prêmio (GP). Na ocasião, a cidade de Le Mans sediou o Grande Prêmio da França. Atualmente, Le Mans não recebe a Fórmula 1, mas é considerada um dos mais importantes circuitos do mundo.</>
+        <p>Entre 1901 e 1949, vários GPs foram disputados ao redor da Europa, em países como França, Itália, Bélgica, Inglaterra, Alemanha, Mônaco e Espanha. Os GPs só não aconteceram durante a Primeira Guerra Mundial e a Segunda. No decorrer das guerras, os pilotos participaram em corridas nos Estados Unidos.</p>
+        <div class="row">
+            <div class="column">
+                <img src="historia-da-formula-1-conheca-a-origem-os-pilotos-e-sua-evolucao-ao-longo-dos-anos-2.jpg" style="width:100%" />
+            </div>
+            <div class="column">
+                <img src="transferir (1).jpg" style="width:100%" />
+            </div>
+        </div>
+        <p>A última década confirmou o talento do inglês Lewis Hamilton, que igualou-se a Michael Schumacher em número de títulos. Pilotando uma Mercedes, Hamilton conseguiu os títulos das temporadas 2014, 2015, 2017, 2018, 2019 e 2020. A Mercedes também venceu em 2016, mas com o alemão Nico Rosberg.Hamilton conseguiu superar os recordes de vitórias e pole positions (primeira posição na classificação para a corrida) de Michael Schumacher e do seu ídolo, Ayrton Senna. Como ainda tem alguns anos de carreira, o inglês pode tornar-se o maior piloto de F1 de todos os tempos.</p>
+        <div class="row">
+            <div class="column">
+                <img src="esporte-f1-mercedes-20190213-006.jpg" style="width:100%" />
+            </div>
+            <div class="column">
+                <img src="lewis-hamilton-mercedes-amg-f1.jpg" style="width:100%" />
+            </div>
+        </div>
+        <p>
+            Antes dos títulos da Mercedes, os campeonatos foram conquistados pela Red Bull Team (RBR) com o piloto alemão Sebastian Vettel. Em 2010, com apenas 23 anos e 134 dias, Vettel tornou-se o mais jovem campeão da Fórmula 1. Ele também ganhou nos três anos seguintes.Também pela Red Bull, o holandês Max Verstappen tornou-se o piloto mais jovem a vencer uma corrida na F1, com 18 anos e 7 meses. A juventude dos pilotos é uma característica atual da Fórmula 1.Max Verstappen foi ainda campeao da ultima edição de formula 1.
+        </p>
+    </div>
+
+    <div class="wrapper-grey padded">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center">Classificações 2021</h2>
+                <div class="col-lg-4 col-md-6 col-12 py-1">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('news/max1lugar.jpg');">
+                        <div class="card-category">395,5 PTS</div>
+                        <div class="card-description">
+                            <h5>Max Verstappen</h5>
+                        </div>
+                        <img class="card-user avatar avatar-large" src="1.png">
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 py-1">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('news/hamilton2lugar.jpg');">
+                        <div class="card-category">387,5 PTS</div>
+                        <div class="card-description">
+                            <h5>Lewis Hamilton</h5>
+                        </div>
+                        <img class="card-user avatar avatar-large" src="2.png">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 py-1">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('news/bottas3lugar.jpg');">
+                        <div class="card-category">226 PTS</div>
+                        <div class="card-description">
+                            <h5>Valtteri Bottas</h5>
+                        </div>
+                        <img class="card-user avatar avatar-large" src="3.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-grey padded">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center">Classificações Equipas 2021</h2>
+                <div class="col-lg-4 col-md-6 col-12 py-1">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('news/_117371796_mercedes2_pa.jpg');">
+                        <div class="card-category">613,5 PTS</div>
+                        <div class="card-description">
+                            <h5>Mercedes</h5>
+                        </div>
+                        <img class="card-user avatar avatar-large" src="1.png">
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 py-1">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('news/_117371798_redbull2_pa.jpg');">
+                        <div class="card-category">585,5 PTS</div>
+                        <div class="card-description">
+                            <h5>Red Bull Racing</h5>
+                        </div>
+                        <img class="card-user avatar avatar-large" src="2.png">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 py-1">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('news/_117552097_thenewferrarisf21.jpg');">
+                        <div class="card-category">323,5 PTS</div>
+                        <div class="card-description">
+                            <h5>Ferrari</h5>
+                        </div>
+                        <img class="card-user avatar avatar-large" src="3.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-grey padded" style="margin-bottom:90px">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center">Números da Fórmula 1</h2>
+                <button type="button" class="collapsible button-55" role="button" style="margin-bottom:9px">Pilotos com mais títulos na F1</button>
+                <div class="content">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Michael Schumacher e Lewis Hamilton</td>
+                                <td align=right>7</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Juan Manuel Fangio</td>
+                                <td align=right>5</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Alain Prost e Sebastian Vettel</td>
+                                <td align=right>4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Ayrton Senna, Nelson Piquet, Niki Lauda, Jack Brabham e Jackie Stewart</td>
+                                <td align=right>3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="collapsible button-55" role="button" style="margin-bottom:9px">Pilotos com mais vitórias na F1</button>
+                <div class="content">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Lewis Hamilton</td>
+                                <td align=right>100</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Michael Schumacher</td>
+                                <td align=right>91</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Sebastian Vettel</td>
+                                <td align=right>53</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Alain Prost</td>
+                                <td align=right>51</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Ayrton Senna</td>
+                                <td align=right>41</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="collapsible button-55" role="button" style="margin-bottom:9px">Pilotos com mais pole positions na F1</button>
+                <div class="content">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Lewis Hamilton</td>
+                                <td align=right>101</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Michael Schumacher</td>
+                                <td align=right>68</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Ayrton Senna</td>
+                                <td align=right>65</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Sebastian Vettel</td>
+                                <td align=right>57</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Jim Clark</td>
+                                <td align=right>33</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="collapsible button-55" role="button" style="margin-bottom:9px">Pilotos com mais corridas disputadas na F1</button>
+                <div class="content">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Kimi Raikkonen</td>
+                                <td align=right>346</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Fernando Alonso</td>
+                                <td align=right>329</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Rubens Barrichello</td>
+                                <td align=right>326</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Jenson Button</td>
+                                <td align=right>309</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Michael Schumacher</td>
+                                <td align=right>308</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="collapsible button-55" role="button" style="margin-bottom:9px">Equipes com mais títulos na F1</button>
+                <div class="content">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Ferrari</td>
+                                <td align=right>15</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>McLaren</td>
+                                <td align=right>12</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Mercedes</td>
+                                <td align=right>9</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Williams</td>
+                                <td align=right>7</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Lotus</td>
+                                <td align=right>5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-black navbar-dark fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text"><img src="formula-1-logo-7.png" width="45"> Formula One World Championship Limited</div>
+            <div class="navbar-text text-center"><a class="nav-link active" aria-current="page" href="store.html"> Official Store</a></div>
+            <div class="navbar-text text-end">
+                <a class="navbar-brand" href="https://www.instagram.com/f1/?hl=pt"><img src="Glossy-Instagram-icon-PNG.png" width="30" height="30"></a>
+                <a class="navbar-brand" href="https://www.facebook.com/Formula1/"><img src="facebook-icon.png" width="30" height="30"></a>
+                <a class="navbar-brand" href=" https://www.youtube.com/user/Formula1?app=desktop"><img src="kisspng-united-states-youtube-logo-youtube-play-button-transparent-png-5ab1be08946c16.888989591521597960608.png" width="30" height="30"></a>
+            </div>
+        </div>
+    </nav>
+    <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active1");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
